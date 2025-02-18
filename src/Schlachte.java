@@ -11,8 +11,8 @@ public class Schlachte {
      *
      * @param id            Eindeutige Eveniment-ID
      * @param charaktername Vollständiger Name des beteiligten Ninjas
-     * @param stufe          Ninja-Rang zum Zeitpunkt des Ereignisses
-     * @param beschreibung   Kurze Beschreibung des Ereignisses
+     * @param stufe         Ninja-Rang zum Zeitpunkt des Ereignisses
+     * @param beschreibung  Kurze Beschreibung des Ereignisses
      * @param datum         Datum des Ereignis
      * @param kraftpunkte   Bewertetes Kraftniveau des Ereignisses
      */

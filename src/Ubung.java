@@ -1,9 +1,5 @@
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +42,7 @@ public class Ubung {
         List<String> noDuplicates = new ArrayList<>();
         for (Schlachte objekt : ninjaList) {
             if (!noDuplicates.contains(objekt.charaktername)) {
-                if (objekt.kraftpunkte>wert) {
+                if (objekt.kraftpunkte > wert) {
                     System.out.println(objekt.charaktername);
                     noDuplicates.add(objekt.charaktername);
                 }
@@ -64,7 +60,7 @@ public class Ubung {
         // Ausgabe der gefilterten und sortierten ninjas
         System.out.println("\nNinjas mit Jonin gesortet: ");
         for (Schlachte ninja : ninjaDaten) {
-            System.out.println(ninja.datum + " : "+ ninja.charaktername +" - "+ ninja.beschreibung);
+            System.out.println(ninja.datum + " : " + ninja.charaktername + " - " + ninja.beschreibung);
         }
     }
 }
