@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Ubung {
     public static void main(String[] args) {
@@ -37,7 +38,19 @@ public class Ubung {
             System.err.println("Fehler beim Parsen der Datei: " + e.getMessage());
         }
 
-        ninjaList.forEach(System.out::println);
-
+        //ninjaList.forEach(System.out::println);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Wert: ");
+        double wert = sc.nextDouble();
+        sc.nextLine();
+        List<String> noDuplicates = new ArrayList<>();
+        for (Ninjas objekt : ninjaList) {
+            if (!noDuplicates.contains(objekt.charaktername)) {
+                if (objekt.kraftpunkte>wert) {
+                    System.out.println(objekt.charaktername);
+                    noDuplicates.add(objekt.charaktername);
+                }
+            }
+        }
     }
 }
