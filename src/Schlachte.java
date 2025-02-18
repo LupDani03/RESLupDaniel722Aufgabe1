@@ -25,11 +25,23 @@ public class Schlachte {
         this.kraftpunkte = kraftpunkte;
     }
 
+    /**
+     * Gibt eine String-Darstellung der Schlachtens zurück.
+     *
+     * @return Formatierte Zeichenkette mit allen Informationen des Schlachtens.
+     */
     @Override
     public String toString() {
         return "ID: " + id + ", Name: " + charaktername + ", stufe: " + stufe + ", beschreibung: " + beschreibung + ", Datum: " + datum + ", kraftpunkte: " + kraftpunkte;
     }
 
+    /**
+     * Vergleicht zwei Ninjanamen basierend auf dem Datum.
+     *
+     * @param o Die zu vergleichende mitgliedsnamen
+     * @return Ein negativer Wert, wenn diese Ereignis neuer ist als die übergebene,
+     * ein positiver Wert, wenn sie älter ist, oder 0, wenn beide gleich alt sind.
+     */
     public int compareTo(Schlachte o) {
         return o.datum.compareTo(this.datum);
     }
