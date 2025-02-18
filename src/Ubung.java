@@ -61,7 +61,7 @@ public class Ubung {
         }
         ninjaDaten.sort(Ninjas::compareTo);
 
-        // Ausgabe der gefilterten und sortierten ninja
+        // Ausgabe der gefilterten und sortierten ninjas
         System.out.println("\nNinjas mit Jonin gesortet: ");
         for (Ninjas ninja : ninjaDaten) {
             System.out.println(ninja.datum + " : "+ ninja.charaktername +" - "+ ninja.beschreibung);
