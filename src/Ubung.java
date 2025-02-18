@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Ubung {
     public static void main(String[] args) {
         String filepath = "ninja_events.tsv";
-        List<Ninjas> ninjaList = new ArrayList<>();
+        List<Schlachte> ninjaList = new ArrayList<>();
 
         try {
             List<String> lines = Files.readAllLines(Paths.get(filepath));
@@ -28,7 +28,7 @@ public class Ubung {
                     String datum = daten[4];
                     double kraftpunkte = Double.parseDouble(daten[5]);
 
-                    Ninjas neuesObjekt = new Ninjas(id, ninja, symptom, diagnose, datum, kraftpunkte);
+                    Schlachte neuesObjekt = new Schlachte(id, ninja, symptom, diagnose, datum, kraftpunkte);
                     ninjaList.add(neuesObjekt);
                 }
             }
@@ -44,7 +44,7 @@ public class Ubung {
         double wert = sc.nextDouble();
         sc.nextLine();
         List<String> noDuplicates = new ArrayList<>();
-        for (Ninjas objekt : ninjaList) {
+        for (Schlachte objekt : ninjaList) {
             if (!noDuplicates.contains(objekt.charaktername)) {
                 if (objekt.kraftpunkte>wert) {
                     System.out.println(objekt.charaktername);
@@ -53,17 +53,17 @@ public class Ubung {
             }
         }
 
-        List<Ninjas> ninjaDaten = new ArrayList<>();
-        for (Ninjas objekt : ninjaList) {
+        List<Schlachte> ninjaDaten = new ArrayList<>();
+        for (Schlachte objekt : ninjaList) {
             if (objekt.stufe.equals("Jonin")) {
                 ninjaDaten.add(objekt);
             }
         }
-        ninjaDaten.sort(Ninjas::compareTo);
+        ninjaDaten.sort(Schlachte::compareTo);
 
         // Ausgabe der gefilterten und sortierten ninjas
         System.out.println("\nNinjas mit Jonin gesortet: ");
-        for (Ninjas ninja : ninjaDaten) {
+        for (Schlachte ninja : ninjaDaten) {
             System.out.println(ninja.datum + " : "+ ninja.charaktername +" - "+ ninja.beschreibung);
         }
     }
