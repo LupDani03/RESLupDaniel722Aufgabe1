@@ -52,5 +52,19 @@ public class Ubung {
                 }
             }
         }
+
+        List<Ninjas> ninjaDaten = new ArrayList<>();
+        for (Ninjas objekt : ninjaList) {
+            if (objekt.stufe.equals("Jonin")) {
+                ninjaDaten.add(objekt);
+            }
+        }
+        ninjaDaten.sort(Ninjas::compareTo);
+
+        // Ausgabe der gefilterten und sortierten ninja
+        System.out.println("\nNinjas mit Jonin gesortet: ");
+        for (Ninjas ninja : ninjaDaten) {
+            System.out.println(ninja.datum + " : "+ ninja.charaktername +" - "+ ninja.beschreibung);
+        }
     }
 }
